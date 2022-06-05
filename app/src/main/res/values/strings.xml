@@ -4,9 +4,14 @@
     <string name="back">Назад</string>
     <string name="save">Сохранить</string>
     <string name="select_group">Выберите группу</string>
-    <string name="manufacture">Производитель</string>
+    <string name="manufacturer">Производитель</string>
     <string name="name">Наименование</string>
     <string name="group">Группа</string>
     <string name="manufacture_date">Дата произв.</string>
     <string name="expiration_date">Дата оконч.</string>
+    <string name="select_manufacturer">Выберите производителя</string>
+    <string name="select">Выбрать</string>
+    <string name="select_date">Выберите дату</string>
+    <string name="month">Месяц</string>
+    <string name="year">Год</string>
 </resources>

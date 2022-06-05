@@ -6,17 +6,17 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/label_edit_group"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="@string/group_name"
+        tools:text="Заголовок"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edit_group_name"
+        android:id="@+id/edit_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -26,7 +26,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_edit_group"
+        app:layout_constraintTop_toBottomOf="@+id/title"
         tools:text="Наименование группы" />
 
     <Button
@@ -36,11 +36,11 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="24dp"
-        android:backgroundTint="@color/light_green_a_200_dark"
+        android:backgroundTint="@color/light_green_A200_dark"
         android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_group_name" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_name" />
 
     <Button
         android:id="@+id/btn_save"
@@ -49,9 +49,9 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
-        android:backgroundTint="@color/light_green_a_200_dark"
+        android:backgroundTint="@color/light_green_A200_dark"
         android:text="@string/save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_group_name" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_name" />
 </androidx.constraintlayout.widget.ConstraintLayout>
