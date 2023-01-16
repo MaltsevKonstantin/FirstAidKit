@@ -53,6 +53,8 @@ class SelectDate2Dialog(var month: Int, var year: Int, var listener: ru.konstant
             dismiss()
         }
 
-        return AlertDialog.Builder(activity).setView(binding.root).create()
+        val dialog = AlertDialog.Builder(activity).setView(binding.root).create()
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        return dialog
     }
 }

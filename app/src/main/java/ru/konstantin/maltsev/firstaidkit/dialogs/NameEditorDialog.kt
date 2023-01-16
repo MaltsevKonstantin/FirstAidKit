@@ -38,6 +38,8 @@ class NameEditorDialog(val type: Int, val id: Long, var name: String, private va
             }
         }
 
-        return AlertDialog.Builder(activity).setView(binding.root).create()
+        val dialog = AlertDialog.Builder(activity).setView(binding.root).create()
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        return dialog;
     }
 }
