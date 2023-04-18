@@ -9,10 +9,10 @@ android {
 
     defaultConfig {
         applicationId "ru.konstantin.maltsev.firstaidkit"
-        minSdk 21
+        minSdk 23
         targetSdk 33
-        versionCode 2
-        versionName "0.9.0"
+        versionCode 3
+        versionName "0.9.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

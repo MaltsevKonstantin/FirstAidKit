@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FirstAidKit</string>
+    <string name="app_name">Аптечка первой помощи</string>
     <string name="group_name">Имя группы</string>
     <string name="back">Назад</string>
     <string name="save">Сохранить</string>

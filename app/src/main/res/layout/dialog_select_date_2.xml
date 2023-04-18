@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="@color/light_green_50"
+    app:cardBackgroundColor="@color/card_color"
     app:cardCornerRadius="12dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="@string/select_date"
+            android:textColor="@color/text_color"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +43,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="60dp"
             android:text="@string/month"
+            android:textColor="@color/text_color"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title" />
@@ -53,6 +55,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginEnd="8dp"
             android:text="@string/year"
+            android:textColor="@color/text_color"
             android:textSize="20sp"
             app:layout_constraintEnd_toStartOf="@+id/year"
             app:layout_constraintTop_toTopOf="@+id/title_month" />
@@ -62,6 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:textColor="@color/text_color"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@+id/title_month"
             app:layout_constraintTop_toTopOf="@+id/title_month"
@@ -72,6 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="40dp"
+            android:textColor="@color/text_color"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/title_year"
@@ -86,7 +91,8 @@
             app:layout_constraintBottom_toTopOf="@+id/month"
             app:layout_constraintEnd_toEndOf="@+id/month"
             app:layout_constraintStart_toStartOf="@+id/month"
-            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_up_24" />
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_up_24"
+            app:tint="@color/fab_icon_color" />
 
         <ImageButton
             android:id="@+id/btn_up_year"
@@ -97,7 +103,8 @@
             app:layout_constraintBottom_toTopOf="@+id/year"
             app:layout_constraintEnd_toEndOf="@+id/year"
             app:layout_constraintStart_toStartOf="@+id/year"
-            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_up_24" />
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_up_24"
+            app:tint="@color/fab_icon_color" />
 
         <ImageButton
             android:id="@+id/btn_down_month"
@@ -108,7 +115,8 @@
             app:layout_constraintEnd_toEndOf="@+id/month"
             app:layout_constraintStart_toStartOf="@+id/month"
             app:layout_constraintTop_toBottomOf="@+id/month"
-            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24"
+            app:tint="@color/fab_icon_color" />
 
         <ImageButton
             android:id="@+id/btn_down_year"
@@ -119,7 +127,8 @@
             app:layout_constraintEnd_toEndOf="@+id/year"
             app:layout_constraintStart_toStartOf="@+id/year"
             app:layout_constraintTop_toBottomOf="@+id/year"
-            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24"
+            app:tint="@color/fab_icon_color" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

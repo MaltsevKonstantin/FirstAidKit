@@ -1,5 +1,6 @@
 package ru.konstantin.maltsev.firstaidkit.activities
 
+import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -34,6 +35,8 @@ class MedicineActivity : AppCompatActivity() {
         binding = ActivityMedicineBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(getColor(R.color.light_green_A200_dark)))
+
         realm = Realm.open(Configuration().getDefault())
 
         intent
@@ -66,7 +69,7 @@ class MedicineActivity : AppCompatActivity() {
             createNewGroup(medicine)
         }
 
-        binding.selectedManufacturer.setOnClickListener {
+        binding.manufacturerCard.setOnClickListener {
             val realmResults = realm.query<Manufacturer>().find()
             if (realmResults.size == 0) createNewManufactured(medicine)
             else {
@@ -86,7 +89,7 @@ class MedicineActivity : AppCompatActivity() {
             }
         }
 
-        binding.selectedGroup.setOnClickListener {
+        binding.groupCard.setOnClickListener {
             val realmResults = realm.query<Group>().find()
             if (realmResults.size == 0) createNewGroup(medicine)
             else {
@@ -106,7 +109,7 @@ class MedicineActivity : AppCompatActivity() {
             }
         }
 
-        binding.manufactureDate.setOnClickListener {
+        binding.manufactureDateCard.setOnClickListener {
             val calendar = Calendar.getInstance()
             if (medicine.manufactureTimestamp > 0) calendar.timeInMillis = medicine.manufactureTimestamp
             SelectDate2Dialog(calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.YEAR),
@@ -114,13 +117,15 @@ class MedicineActivity : AppCompatActivity() {
                 override fun onSelectDate(month: Int, year: Int) {
                     calendar.set(Calendar.MONTH, month - 1)
                     calendar.set(Calendar.YEAR, year)
+                    calendar.set(Calendar.DAY_OF_MONTH,
+                        calendar.getActualMinimum(Calendar.DAY_OF_MONTH))
                     medicine.manufactureTimestamp = calendar.timeInMillis
                     updateManufacturedDate(medicine)
                 }
             }).show(supportFragmentManager, SelectDate2Dialog.TAG)
         }
 
-        binding.expirationDate.setOnClickListener {
+        binding.expirationDateCard.setOnClickListener {
             val calendar = Calendar.getInstance()
             if (medicine.expirationTimestamp > 0) calendar.timeInMillis = medicine.expirationTimestamp
             SelectDate2Dialog(calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.YEAR),
@@ -128,6 +133,8 @@ class MedicineActivity : AppCompatActivity() {
                     override fun onSelectDate(month: Int, year: Int) {
                         calendar.set(Calendar.MONTH, month - 1)
                         calendar.set(Calendar.YEAR, year)
+                        calendar.set(Calendar.DAY_OF_MONTH,
+                            calendar.getActualMinimum(Calendar.DAY_OF_MONTH))
                         medicine.expirationTimestamp = calendar.timeInMillis
                         updateExpirationDate(medicine)
                     }
@@ -184,7 +191,7 @@ class MedicineActivity : AppCompatActivity() {
     private fun showWarning(message: String) {
         val snackbar = Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            snackbar.setBackgroundTint(getColor(R.color.red_A700))
+            snackbar.setBackgroundTint(getColor(R.color.danger))
         }
         snackbar.show()
     }

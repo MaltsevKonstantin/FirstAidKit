@@ -15,6 +15,7 @@ class Medicine : RealmObject{
 
     @Ignore var isDanger = false
     @Ignore var isWarning = false
+    @Ignore val MILLISECONDS_IN_DAY = 86400000
 
     fun isExpirationDateHasExpired() : Boolean {
         val expirationCalendar = Calendar.getInstance()
@@ -23,11 +24,11 @@ class Medicine : RealmObject{
     }
 
     fun getDeferenceDays() : Int {
-        return ((expirationTimestamp - manufactureTimestamp) / 86400000).toInt()
+        return ((expirationTimestamp - manufactureTimestamp) / MILLISECONDS_IN_DAY).toInt()
     }
 
     fun getRemainingDays() : Int {
-        return ((expirationTimestamp - Calendar.getInstance().timeInMillis) / 86400000).toInt()
+        return ((expirationTimestamp - Calendar.getInstance().timeInMillis) / MILLISECONDS_IN_DAY).toInt()
     }
 
     fun getStringRemainingShelfLife(): String {
